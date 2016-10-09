@@ -1,0 +1,44 @@
+﻿
+Lesson 1:
+----------------------------------------------------------
+Creating a new AddIn class and accessing dexterity forms and windows
+Setting up a debugging environment
+where to find information regarding GP information
+
+Lesson 1a:
+----------------------------------------------------------
+Access form and window event handlers
+	showing access through intellisense
+
+Adding event handlers
+
+	Form level open before and after events first
+	window activation before and after
+		activation events fire off when modal windows are introduced as well
+	Form level close before and after events last
+
+Lesson 1b:
+-----------------------------------------------------------
+Managing the event life cycle
+	illustrate how the activate before and after fire when the window loses and regains focus through
+	switching windows and message boxes
+
+Adding to the additional menu
+
+
+Lesson 2
+------------------------------------------------------------
+Accessing fields, buttons, and events
+using a function to view all field's names and data in all windows of a Dexterity form
+
+Lesson 2a
+------------------------------------------------------------
+Accessing fields, buttons, and events
+using a function to view all scroll windows fields using the same method as in Lesson 2
+Access scroll window events 
+Access modal window events
+
+Lesson 3 (201)
+------------------------------------------------------------
+CRUD overview
+

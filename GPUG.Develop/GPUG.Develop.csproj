@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F500FF83-7C0D-435F-A6CB-1AEAD16A42E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPUG.Develop</RootNamespace>
+    <AssemblyName>GPUG.Develop</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Application.Dynamics, Version=16.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Dynamics\GP2015\Application.Dynamics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Dexterity.Bridge, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Dynamics\GP2015\Microsoft.Dexterity.Bridge.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Dexterity.Shell, Version=16.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Dynamics\GP2015\Microsoft.Dexterity.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\DynamicsGPForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DynamicsGPForm1.Designer.cs">
+      <DependentUpon>DynamicsGPForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formVendorMaintenancePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formVendorMaintenancePopup.Designer.cs">
+      <DependentUpon>formVendorMaintenancePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson_1.cs" />
+    <Compile Include="Lesson_2a.cs" />
+    <Compile Include="Lesson_2.cs" />
+    <Compile Include="Lesson_1b.cs" />
+    <Compile Include="Lesson_4.cs" />
+    <Compile Include="Lesson_3e.cs" />
+    <Compile Include="Lesson_3d.cs" />
+    <Compile Include="Lesson_3c.cs" />
+    <Compile Include="Lesson_3b.cs" />
+    <Compile Include="Lesson_3a.cs" />
+    <Compile Include="old\GP_Addin_WorkWithData.cs" />
+    <Compile Include="old\GP_Addin_WorkWithEvents_2.cs" />
+    <Compile Include="old\GP_Addin_WorkWithEvents.cs" />
+    <Compile Include="old\GP_Addin_CreateNewAddin.cs" />
+    <Compile Include="Integrations\GeneralLedgerAddIn_bak.cs" />
+    <Compile Include="Integrations\GeneralLedgerAddIn.cs" />
+    <Compile Include="Lesson_1a.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lessons\Lesson Guide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\DynamicsGPForm1.resx">
+      <DependentUpon>DynamicsGPForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formVendorMaintenancePopup.resx">
+      <DependentUpon>formVendorMaintenancePopup.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "C:\Users\jpelkola\Documents\_TFS\GPUG\GPUG.Develop\GPUG.Develop\bin\Debug\GPUG.Develop.dll" "C:\Program Files (x86)\Microsoft Dynamics\GP2015\Addins\GPUG.Develop.dll"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
